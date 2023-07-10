@@ -1,0 +1,30 @@
+pipeline{
+	 agent{
+  		label 'windows'
+}
+
+stages{
+
+  stage('CheckOut'){
+   steps {
+                checkout([
+                    $class: 'GitSCM', 
+                    branches: [[name: '*/master']], 
+                    userRemoteConfigs: [[url: 'repo url']]
+                ])
+          }
+   }
+
+  stage('Deploy'){
+   steps{
+         sh """
+         pwd
+         ls -lrt 
+         mv Housekeep.sh /temp
+         sh Housekeep.sh
+         """
+   }
+  }
+
+ }
+}
