@@ -1,9 +1,6 @@
 # Jenkins2AZure
 This repo will contain codes/materials pertaining to migration from Jenkins to ADO
 
-Basic_Pipeline_Flow.txt
-- this file contains the basic pipeline structure,it can used to understands the syntaxes that's required to execute jobs/tasks in a pipeline.
-
 Houseekeep.sh
 - this a sample bash script created to demo the migration process.
 

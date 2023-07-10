@@ -1,0 +1,17 @@
+
+#Code checkout is handled by pipeline itself since I'm using Azure's own repo.
+
+jobs:
+ - job: Deploy
+   pool: OSBox #box to run the jobs
+   
+   steps:
+  # Call the Housekeep script
+    - task: Bash@3 #Azure's build in script
+      displayName: 'Call Housekeep.sh'    
+      inputs:
+        targetType: 'inline'
+        script: |
+           cd /temp
+           sh Housekeep.sh
+    
